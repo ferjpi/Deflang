@@ -35,6 +35,14 @@ function Module.get_language()
   return Module.language
 end
 
+function Module.set_language(language)
+  if Module.language_list[language] then
+    Module.current_language = language
+  else
+    print("Deflang[Error]: The selected language is not supported.")
+  end
+end
+
 function Module.get_text(key)
   if next(Module.locale_data) == nil then
     print("Deflang: You have not set any language data. Check the example.")
